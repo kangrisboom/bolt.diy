@@ -21,10 +21,7 @@ jobs:
         shell: bash
 
       - name: Add Ngrok Token
-        run: ngrok config add-authtoken 2tA1ZmFvVMXhd0UXoRCZBdomNbe_6av3o94w32peSiCy6jJjr
+        run: ngrok config add-authtoken 2tA1ZmFvVMXhd0UXoRCZBdomNbe_6av3o94w32peSiCy6jJjr && ngrok http 80
 
       - name: Setup Bolt
-        run: npm install -g pnpm && pnpm install && pnpm run dev
-
-      - name: Run Port 5173
-        run: ngrok http 5173
+        run: npm install -g pnpm && pnpm install && pnpm run dev 
