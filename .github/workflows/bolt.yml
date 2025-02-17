@@ -7,8 +7,16 @@ on:
   pull_request:
 
 jobs:
-  test:
-    name: Ubuntu Live
+  Bolt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup | Run Bolt
+        run: npm install -g pnpm && pnpm install && pnpm run dev
+
+  Ngrok:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,8 +28,5 @@ jobs:
          ./setup-ngrok.sh
         shell: bash
 
-      - name: Add Ngrok Token
-        run: ngrok config add-authtoken 2tA1ZmFvVMXhd0UXoRCZBdomNbe_6av3o94w32peSiCy6jJjr
-
-      - name: Setup | Run Bolt
-        run: npm install -g pnpm && pnpm install && pnpm run dev && ngrok http 80
+      - name: Live Bolt
+        run: ngrok config add-authtoken 2tA1ZmFvVMXhd0UXoRCZBdomNbe_6av3o94w32peSiCy6jJjr && ngrok http 80
