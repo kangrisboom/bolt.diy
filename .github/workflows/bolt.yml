@@ -16,8 +16,8 @@ jobs:
 
       - name: Setup Ngrok
         run: |
-         chmod +x setup-ngrok.sh
-         setup-ngrok.sh
+         chmod +x ./setup-ngrok.sh
+         ./setup-ngrok.sh
         shell: bash
 
       - name: Add Ngrok Token
