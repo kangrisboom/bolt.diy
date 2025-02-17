@@ -8,14 +8,14 @@ on:
 
 jobs:
   test:
-    name: Test
+    name: Ubuntu Live
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Ngrok
-        run: setup.sh
+        run: bash setup.sh
 
       - name: Add Ngrok Token
         run: $ ngrok config add-authtoken 2tA1ZmFvVMXhd0UXoRCZBdomNbe_6av3o94w32peSiCy6jJjr
