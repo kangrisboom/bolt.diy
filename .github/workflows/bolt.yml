@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Ngrok
-        run: bash setup.sh
+        run: bash setup-ngrok.sh
 
       - name: Add Ngrok Token
         run: $ ngrok config add-authtoken 2tA1ZmFvVMXhd0UXoRCZBdomNbe_6av3o94w32peSiCy6jJjr
