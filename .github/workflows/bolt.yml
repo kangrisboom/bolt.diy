@@ -20,11 +20,5 @@ jobs:
          ./setup-ngrok.sh
         shell: bash
 
-      - name: Add Ngrok Token
-        run: $ ngrok config add-authtoken 2tA1ZmFvVMXhd0UXoRCZBdomNbe_6av3o94w32peSiCy6jJjr
-
-      - name: Run TCP 5173
-        run: $ ngrok tcp 5173
-
       - name: Setup Bolt
         run: npm install -g pnpm && pnpm install && pnpm run dev
