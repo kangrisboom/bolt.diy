@@ -18,7 +18,7 @@ jobs:
         run: |
          chmod +x setup-ngrok.sh
          setup-ngrok.sh
-      shell: bash
+        shell: bash
 
       - name: Add Ngrok Token
         run: $ ngrok config add-authtoken 2tA1ZmFvVMXhd0UXoRCZBdomNbe_6av3o94w32peSiCy6jJjr
